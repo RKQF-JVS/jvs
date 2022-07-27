@@ -12,8 +12,8 @@
 
 ## **项目构成**
 
-- 框架前端地址：https://gitee.com/software-minister/jvs-ui
-- 框架后端地址：https://gitee.com/software-minister/jvs
+- 框架前端地址：https://github.com/RKQF-JVS/jvs-ui
+- 框架后端地址：https://github.com/RKQF-JVS/jvs
 
 
 ## **体验地址**
@@ -27,7 +27,7 @@
 
 ### 部署文档
 
-https://gitee.com/software-minister/jvs-docker-compose/blob/master/readme.md
+https://github.com/RKQF-JVS/jvs-docker-compose/blob/master/readme.md
 
 
 
