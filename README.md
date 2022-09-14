@@ -130,7 +130,7 @@ https://github.com/RKQF-JVS/jvs-docker-compose/blob/master/readme.md
 * 禁止在未备案的情况下，私自使用（包含自用与商用）
 
 ## **技术交流与商务支持：**
-![image](https://user-images.githubusercontent.com/94048608/188834930-40b1b8a5-6090-4eab-9fec-d4e17489e645.png)
+<img width="142" alt="1663131352192" src="https://user-images.githubusercontent.com/94048608/190063362-bbb971a0-64ce-47ac-953c-cdd31bb8cf02.png">
 
 
 
