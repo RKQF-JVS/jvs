@@ -1,3 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-cn.bctools.dingding.DingDingConfig,\
-cn.bctools.dingding.DingSendUtils

@@ -1,41 +1,66 @@
 
+### **项目介绍：**
 
-## **项目介绍：**
+- JVS是什么？
 
-- **JVS的核心目标：**让中小型开发团队过得轻松一点，优化开发团队人力成本高、交付效率低、质量不可控、周期不确定、基础技术投入不足、高端技术支持不够等
-- JVS是面向软件开发团队可以快速实现应用的基础开发框架，采用微服务分布式框架，提供丰富的基础功能，集成众多业务引擎，它灵活性强，界面化配置对开发者友好，底层容器化构建，集合持续化构建。
+  JVS是企业级应用构建的基础脚手架，提供开箱即用的基础功能集成，其中集成了 账户管理、租户管理、用户权限体系、三方登录、环境配置、各种业务日志等功能，还提供了对接 低代码、数据中台的能力。
+
+- JVS能解决什么？
+
+  JVS能降低开发团队构建基础框架的难度，能为企业提供完整的一体化、私有部署的数字底座，并提供完整的企业数字化应用的完整的解决方案。基础框架提供100%的源码开源，提供商用级的可插拔应用模块和服务，支持原生应用的开发与低代码/无代码的轻应用的配置拓展。
+
+- JVS和其他产品区别
+
+  JVS不仅仅是一个框架，具备无限的可能性（可以对接低代码式的业务中台与数据中台）；JVS不仅仅是一堆代码，具备专业的支持团队（服务社群）；JVS不仅仅是基础技术，具备多种企业级场景的完备的解决方案与配套的定制开发服务。
+
+- JVS整体产品体系
+
+  JVS不仅仅是一个框架，是一个完整的企业数字化的解决方案，包括基础框架、业务能力、上层应用等。
+![输入图片说明](img/jvs%E4%BA%A7%E5%93%81%E4%BD%93%E7%B3%BB.png)
 
 
-## **项目标签**
 
-低代码、微服务、支持SaaS、私有化部署、DevOps、
-
-## **项目构成**
+### **项目构成**
 
 - 框架前端地址：https://github.com/RKQF-JVS/jvs-ui
 - 框架后端地址：https://github.com/RKQF-JVS/jvs
 
 
-## **体验地址**
+### **体验地址与账号说明**
+![输入图片说明](img/image%E4%BD%93%E9%AA%8C.png)
+账号说明：
 
-开源协议：详见license
+- 普通用户端：体验者自有微信扫码登录
+- 管理端(全网共享)：testadmin  123456
+- 管理端+应用编辑：联系运营微信号 ruanjbz，开设独立环境与独立账号
+- 管理端+平台配置+应用编辑：联系运营微信号 ruanjbz，获取私有化部署文档与安装包
 
 
-**体验地址：http://frame.bctools.cn/#/login**
+地址说明：
 
-登陆可以通过微信扫码登陆，对于配置数据，请各位技术同学手下留情。
+- 管理平台（含管理平台、低代码）：https://frame.bctools.cn/
+- 数据智仓（数据分析平台）：http://bi.bctools.cn/
+- 企业文档：http://knowledge.bctools.cn/
+- 企业计划（项目管理）：http://teamwork.bctools.cn/
+- 企业邮筒（Web邮箱客户端）：http://mailbox.bctools.cn/
+- 规则引擎：http://rules.bctools.cn/
+- 逻辑引擎：http://logic.bctools.cn/
+- 视频会议：http://meeting.bctools.cn/
+
+
 
 ### 部署文档
 
-https://github.com/RKQF-JVS/jvs-docker-compose/blob/master/readme.md
+https://github.com/RKQF-JVS/jvs/blob/2.1.5/docker-compose/readme.md  
 
+### 部署视频
+
+https://www.bilibili.com/video/BV15e411u7wQ?share_source=copy_web&vd_source=84d509be6d513ddc55eb13d4bd45cf90  
 
 
 **物理拓扑：
 ![输入图片说明](img/image11.png)
 
-
-**技术文档地址（微信登陆可查看）：**
 
 **技术栈说明：**
 
@@ -89,26 +114,31 @@ https://github.com/RKQF-JVS/jvs-docker-compose/blob/master/readme.md
 
 ## **系统部分截图：**
 ### 登陆页面
-![输入图片说明](img/image01.png)
-### 配置化首页
-![输入图片说明](img/1.png)
-### 系统基础信息设置
-![输入图片说明](img/2.png)
+![输入图片说明](img/image%E7%99%BB%E9%99%86%E9%A1%B5%E9%9D%A2.png)
+
+### 登陆首页
+![输入图片说明](img/%E9%A6%96%E9%A1%B5%E7%95%8C%E9%9D%A2.png)
+
+### 应用模板中心
+支持一键安装应用
+![输入图片说明](img/image%E6%A8%A1%E6%9D%BF%E4%B8%AD%E5%BF%83.png)
 ### 框架基础功能
-![输入图片说明](img/3.png)
-![输入图片说明](img/4.png)
-### 应用创建（）
-![输入图片说明](img/5.png)
+![输入图片说明](img/image%E5%9F%BA%E7%A1%80%E5%8A%9F%E8%83%BD.png)
+
 ### 列表配置
-![输入图片说明](img/6.png)
+![输入图片说明](img/image%E5%88%97%E8%A1%A8%E9%A1%B5%E9%85%8D%E7%BD%AE.png)
 ### 流程配置
-![输入图片说明](img/7.png)
+![输入图片说明](img/image%E6%B5%81%E7%A8%8B%E9%85%8D%E7%BD%AE.png)
 ### 表单配置
-![输入图片说明](img/8.png)
-### 图表配置
-![输入图片说明](img/9.png)
+![输入图片说明](img/image%E8%A1%A8%E5%8D%95%E9%85%8D%E7%BD%AE.png)
+
 ### 逻辑配置
-![输入图片说明](img/10.png)
+![输入图片说明](img/%E9%80%BB%E8%BE%91%E5%BC%95%E6%93%8E%E9%85%8D%E7%BD%AE%E6%88%AA%E5%9B%BE.png)
+### 数据加工引擎
+![输入图片说明](img/image%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86.png)
+
+### 图表配置
+![输入图片说明](img/image%E5%9B%BE%E8%A1%A8.png)
 
 ### 使用与授权
 在合规备案情况下，支持自用与商用，商用提供100%源代码。
@@ -130,6 +160,9 @@ https://github.com/RKQF-JVS/jvs-docker-compose/blob/master/readme.md
 * 禁止在未备案的情况下，私自使用（包含自用与商用）
 
 ## **技术交流与商务支持：**
-![输入图片说明](img/image20220821.png)
 
-![输入图片说明](img/111.png)
+![输入图片说明](img/1030.png)
+
+如因人数限制无法加群时，可加运营同学拉入技术交流群
+
+![输入图片说明](https://foruda.gitee.com/images/1693376631879434922/54ec140e_10006021.png "屏幕截图")

@@ -1,4 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-cn.bctools.dynamic.config.DynamicDataConfig,\
-cn.bctools.dynamic.init.DynamicDataSourceInit, \
-cn.bctools.dynamic.filter.DynamicDataSourceFilter
