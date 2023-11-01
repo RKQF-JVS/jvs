@@ -6,19 +6,19 @@
     <parent>
         <groupId>cn.bctools</groupId>
         <artifactId>jvs-core-parent</artifactId>
-        <version>1.0.0</version>
+        <version>2.1.0</version>
     </parent>
 
     <groupId>cn.bctools</groupId>
     <artifactId>jvs-starter-job</artifactId>
-    <version>1.0.0</version>
+    <version>2.1.0</version>
 
     <dependencies>
 
         <dependency>
             <groupId>cn.bctools</groupId>
             <artifactId>jvs-starter-feign</artifactId>
-            <version>1.0.0</version>
+            <version>2.1.0</version>
         </dependency>
 
         <!-- ********************** embed server: netty + gson ********************** -->
@@ -76,5 +76,6 @@
         </dependency>
 
     </dependencies>
+
 
 </project>

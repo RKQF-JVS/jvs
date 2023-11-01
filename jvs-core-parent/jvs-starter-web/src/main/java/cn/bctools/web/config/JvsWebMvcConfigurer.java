@@ -1,11 +1,11 @@
 package cn.bctools.web.config;
 
-import cn.hutool.core.util.ObjectUtil;
 import cn.bctools.common.constant.SysConstant;
 import cn.bctools.common.utils.ObjectNull;
 import cn.bctools.common.utils.SpringContextUtil;
 import cn.bctools.common.utils.SystemThreadLocal;
 import cn.bctools.common.utils.TenantContextHolder;
+import cn.hutool.core.util.ObjectUtil;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.skywalking.apm.toolkit.trace.TraceContext;
@@ -51,9 +51,9 @@ public class JvsWebMvcConfigurer implements WebMvcConfigurer, ClientHttpRequestI
             @Override
             public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
                 RequestContextHolder.setRequestAttributes(RequestContextHolder.getRequestAttributes(), true);
-                String header = request.getHeader(SysConstant.VERSION);
+                String version = request.getHeader(SysConstant.VERSION);
                 String tenantId = request.getHeader(SysConstant.TENANTID);
-                SystemThreadLocal.set(SysConstant.VERSION, header);
+                SystemThreadLocal.set(SysConstant.VERSION, version);
                 //将租户放到当前线程中
                 if (ObjectNull.isNull(TenantContextHolder.getTenantId())) {
                     TenantContextHolder.setTenantId(tenantId);
@@ -80,7 +80,7 @@ public class JvsWebMvcConfigurer implements WebMvcConfigurer, ClientHttpRequestI
 
     /**
      * 添加RestTemplate插件
-     *
+     * <p>
      * 将上下文中的版本号, 租户id放入请求头中
      */
     @Override
@@ -101,4 +101,5 @@ public class JvsWebMvcConfigurer implements WebMvcConfigurer, ClientHttpRequestI
     public void addFormatters(FormatterRegistry registry) {
         registry.addConverterFactory(new EnumConvertorFactory());
     }
+
 }

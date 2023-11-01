@@ -6,12 +6,12 @@
     <parent>
         <groupId>cn.bctools</groupId>
         <artifactId>jvs</artifactId>
-        <version>1.0.0</version>
+        <version>2.1.0</version>
     </parent>
 
     <groupId>cn.bctools</groupId>
     <artifactId>jvs-core-parent</artifactId>
-    <version>1.0.0</version>
+    <version>2.1.0</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -55,7 +55,8 @@
         <module>jvs-starter-rabbit</module>
         <!--代码生成器-->
         <module>jvs-starter-generator</module>
-
+        <!--mongodb 数据库操作工具类-->
+        <module>jvs-starter-mongodb</module>
     </modules>
 
 

@@ -6,7 +6,7 @@
     <parent>
         <groupId>cn.bctools</groupId>
         <artifactId>jvs-apply-flowable</artifactId>
-        <version>1.0.0</version>
+        <version>2.1.0</version>
     </parent>
 
     <artifactId>${moduleName}-mgr</artifactId>
@@ -16,30 +16,23 @@
         <dependency>
             <groupId>cn.bctools</groupId>
             <artifactId>${moduleName}-common</artifactId>
-            <version>1.0.0</version>
+            <version>2.1.0</version>
         </dependency>
         <dependency>
             <groupId>cn.bctools</groupId>
             <artifactId>jvs-starter-web</artifactId>
-            <version>1.0.0</version>
+            <version>2.1.0</version>
         </dependency>
         <dependency>
             <groupId>cn.bctools</groupId>
             <artifactId>jvs-starter-oauth2</artifactId>
-            <version>1.0.0</version>
+            <version>2.1.0</version>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
-                <configuration>
-                    <aggregate>true</aggregate>
-                </configuration>
-            </plugin>
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

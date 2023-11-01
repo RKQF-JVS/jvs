@@ -30,15 +30,13 @@ import java.util.*;
 /**
  * 性能分析拦截器，用于输出每条 SQL 语句及其执行时间
  *
- * @author hubin nieqiurong TaoYu
- * @since 2016-07-07
+ * @author guojing
  */
 @Intercepts({
         @Signature(type = StatementHandler.class, method = "query", args = {Statement.class, ResultHandler.class}),
         @Signature(type = StatementHandler.class, method = "update", args = {Statement.class}),
         @Signature(type = StatementHandler.class, method = "batch", args = {Statement.class})
 })
-@Configuration
 @RefreshScope
 @Data
 @Slf4j

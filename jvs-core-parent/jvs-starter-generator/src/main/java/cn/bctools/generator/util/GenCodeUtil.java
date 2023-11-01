@@ -37,10 +37,21 @@ import java.util.stream.Collectors;
 @Slf4j
 public class GenCodeUtil {
 
+//
+//    @SneakyThrows
+//    public static void main(String[] args) {
+//        String data = "jvs-team-work";
+//        String ip = "localhost:3306";
+//        String name = "root";
+
+//        String password = "root";
+//    模块
+//        String moduleName = "teamwork";
+//        gen(data, ip, name, password, moduleName);
+//    }
     private GenCodeUtil() {
     }
 
-    private static final String REG_MODULE_NAME = "(0-9a-z-)*";
     private static final Configuration CONFIGURATION = new Configuration(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS);
 
     private static final String TEMPLATE_APPLICATION = "/templates/Java_Application.java.ftl";
@@ -80,16 +91,9 @@ public class GenCodeUtil {
             "\tAND t.TABLE_NAME = c.TABLE_NAME  \n" +
             "\tAND t.TABLE_SCHEMA = ";
 
-    @SneakyThrows
-    public static void main(String[] args) {
-
-        String data = "jvs-team-work";
-        String url = "jdbc:mysql://10.0.0.123:3306/" + data + "?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true";
-        String name = "root";
-        String password = "root";
+    private static void gen(String data, String ip, String name, String password, String moduleName) throws java.sql.SQLException {
+        String url = "jdbc:mysql://" + ip + "/" + data + "?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true";
         String driverClassName = "com.mysql.cj.jdbc.Driver";
-        String moduleName = "teamwork";
-
         Db db = new Db(new DriverDataSource(url, driverClassName, new Properties(), name, password));
         Map<String, List<TableColumnInfo>> tableColumnInfosMap = db.query(sql.trim() + "'" + data + "'", TableColumnInfo.class)
                 .stream()
@@ -113,23 +117,6 @@ public class GenCodeUtil {
                 .collect(Collectors.toList());
 
         generateCode(moduleName, tableInfos);
-
-//
-//
-//        // 数据表字段信息
-//        List<TableColumnInfo> tableColumnInfos = new ArrayList<>();
-//        tableColumnInfos.add(new TableColumnInfo().setName("id").setPrimary(true).setColumnComment("主键").setDataType(String.class));
-//        tableColumnInfos.add(new TableColumnInfo().setName("name").setPrimary(false).setColumnComment("实例名称").setDataType(String.class));
-//        tableColumnInfos.add(new TableColumnInfo().setName("createTime").setPrimary(false).setColumnComment("创建时间").setDataType(Date.class));
-//        tableColumnInfos.add(new TableColumnInfo().setName("updateTime").setPrimary(false).setColumnComment("修改时间").setDataType(LocalDateTime.class));
-//        // 数据表信息
-//        TableInfo tableInfo = new TableInfo();
-//        tableInfo.setTableName("process_instance_info");
-//        tableInfo.setInfo("流程实例信息");
-//        tableInfo.setColumns(tableColumnInfos);
-//        List<TableInfo> tableInfos = new ArrayList<>();
-//        tableInfos.add(tableInfo);
-//
     }
 
     /**

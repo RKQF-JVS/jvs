@@ -1,14 +1,14 @@
 package cn.bctools.oauth2.utils;
 
-import cn.hutool.core.util.ObjectUtil;
 import cn.bctools.auth.api.api.AuthDeptServiceApi;
 import cn.bctools.auth.api.api.AuthRoleServiceApi;
 import cn.bctools.auth.api.api.AuthUserServiceApi;
-import cn.bctools.common.entity.dto.UserDto;
 import cn.bctools.auth.api.dto.SearchUserDto;
 import cn.bctools.auth.api.dto.SysDeptDto;
 import cn.bctools.auth.api.dto.SysRoleDto;
+import cn.bctools.common.entity.dto.UserDto;
 import cn.bctools.common.utils.R;
+import cn.hutool.core.util.ObjectUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
@@ -42,12 +42,12 @@ import java.util.Objects;
 public class AuthorityManagementUtils {
 
     @Autowired
-    public AuthorityManagementUtils(AuthUserServiceApi user_service,
-                                    AuthRoleServiceApi role_service,
-                                    AuthDeptServiceApi dept_service) {
-        USER_SERVICE = user_service;
-        ROLE_SERVICE = role_service;
-        DEPT_SERVICE = dept_service;
+    public AuthorityManagementUtils(AuthUserServiceApi userService,
+                                    AuthRoleServiceApi roleService,
+                                    AuthDeptServiceApi deptService) {
+        USER_SERVICE = userService;
+        ROLE_SERVICE = roleService;
+        DEPT_SERVICE = deptService;
     }
 
     private static AuthUserServiceApi USER_SERVICE;
@@ -165,7 +165,7 @@ public class AuthorityManagementUtils {
      * @return 部门集合
      */
     public static SysDeptDto getDeptById(String deptId) {
-        R<SysDeptDto> result = DEPT_SERVICE.get(deptId);
+        R<SysDeptDto> result = DEPT_SERVICE.getById(deptId);
         return validResult(result, null);
     }
 
@@ -175,7 +175,7 @@ public class AuthorityManagementUtils {
      * @return 部门树
      */
     public static List<SysDeptDto> getDeptTree() {
-        R<List<SysDeptDto>> result = DEPT_SERVICE.queryAllByTree();
+        R<List<SysDeptDto>> result = DEPT_SERVICE.getAllTree();
         return validResult(result, Collections.emptyList());
     }
 
@@ -186,7 +186,7 @@ public class AuthorityManagementUtils {
      * @return 部门集合
      */
     public static List<SysDeptDto> getChildDepts(String deptId) {
-        R<List<SysDeptDto>> result = DEPT_SERVICE.queryChildDepts(deptId);
+        R<List<SysDeptDto>> result = DEPT_SERVICE.getChildList(deptId);
         return validResult(result, Collections.emptyList());
     }
 
@@ -197,7 +197,7 @@ public class AuthorityManagementUtils {
      * @return 部门树
      */
     public static SysDeptDto getParentDept(String deptId) {
-        R<SysDeptDto> result = DEPT_SERVICE.queryParentDept(deptId);
+        R<SysDeptDto> result = DEPT_SERVICE.getParent(deptId);
         return validResult(result, null);
     }
 
@@ -209,7 +209,7 @@ public class AuthorityManagementUtils {
      * @return 角色信息集合
      */
     public static List<SysRoleDto> getAllRoles() {
-        R<List<SysRoleDto>> result = ROLE_SERVICE.queryAll();
+        R<List<SysRoleDto>> result = ROLE_SERVICE.getAll();
         return validResult(result, Collections.emptyList());
     }
 
@@ -247,6 +247,5 @@ public class AuthorityManagementUtils {
         }
         return r.getData();
     }
-
 
 }

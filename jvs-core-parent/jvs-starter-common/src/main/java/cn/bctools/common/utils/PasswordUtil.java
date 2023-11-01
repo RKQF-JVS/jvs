@@ -6,7 +6,6 @@ import cn.hutool.crypto.Padding;
 import cn.hutool.crypto.symmetric.AES;
 import cn.bctools.common.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
@@ -90,7 +89,7 @@ public class PasswordUtil {
         String key = Base64.encode(appId);
         //超过16位，截取前面 16位
         if (key.length() >= 16) {
-            key.substring(0, 16);
+            key = key.substring(0, 16);
         }
         String format = String.format("%016d", 0);
         key += format.substring(key.length());

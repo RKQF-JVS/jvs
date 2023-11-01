@@ -80,11 +80,7 @@ public class JvsTenantHandler {
             return true;
         }
         // 初始化租户数据库
-        if(!TenantDynamicDatasourceUtil.init()) {
-            return true;
-        }
-
-        return false;
+        return !TenantDynamicDatasourceUtil.init();
     }
 
 }

@@ -17,7 +17,6 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * @Author: ZhuXiaoKang
  * @Description: 缩略图工具类
- * @Date: 2021/11/16 15:47
  */
 @Slf4j
 public class ThumbnailUtil {

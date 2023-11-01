@@ -40,6 +40,7 @@ public class UserDto implements Serializable {
     private String password;
     private Boolean cancelFlag;
     private String tenantId;
+    /**是否是超级管理员*/
     private Boolean adminFlag;
     private String employeeNo;
     private Integer level;

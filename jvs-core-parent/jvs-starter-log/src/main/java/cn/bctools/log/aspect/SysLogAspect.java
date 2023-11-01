@@ -131,7 +131,6 @@ public class SysLogAspect {
         }
         //保存执行信息
         try {
-//            logService.notice(logPo);
             SpringContextUtil.getApplicationContext().publishEvent(new LogApplicationEvent(this, logPo));
         } catch (Exception e) {
             log.error("保存请求日志异常", e);

@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=cn.bctools.mongodb.starter.MongoHelperAutoConfig
+
+

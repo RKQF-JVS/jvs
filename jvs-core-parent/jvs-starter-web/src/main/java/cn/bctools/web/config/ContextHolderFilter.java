@@ -42,6 +42,7 @@ public class ContextHolderFilter extends GenericFilterBean {
             SystemThreadLocal.set(SysConstant.TENANTID, tenantId);
         }
         filterChain.doFilter(request, response);
+        SystemThreadLocal.clear();
     }
 
 }

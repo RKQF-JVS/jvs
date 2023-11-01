@@ -21,7 +21,6 @@ import java.util.Set;
 /**
  * @Author: ZhuXiaoKang
  * @Description: 多租户动态初始化数据源工具类
- * @Date: 2021/11/03 15:40
  */
 @Slf4j
 public class TenantDynamicDatasourceUtil {

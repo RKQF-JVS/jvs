@@ -19,11 +19,11 @@ public class DingDingConfig {
     /**
      * 密钥，机器人安全设置页面，加签一栏下面显示的SEC开头的字符串
      */
-    String secret = "";
+    String secret = "{密钥}";
     /**
      * 钉钉机器人的Webhook的地址
      */
-    String url = "https://oapi.dingtalk.com/robot/send?access_token=6e212a98091d6a404cff7043711de4d1073d271bb933c18011748e60d4fa2b74";
+    String url = "https://oapi.dingtalk.com/robot/send?access_token={Token}";
     /**
      * 需要 @哪些用户(手机号)，为空时默认 @全体成员
      */

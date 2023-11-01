@@ -1,11 +1,11 @@
 package cn.bctools.oss.template;
 
-import cn.hutool.core.date.DateUtil;
-import cn.hutool.core.util.ObjectUtil;
-import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import cn.bctools.common.utils.IdGenerator;
 import cn.bctools.oss.dto.BaseFile;
 import cn.bctools.oss.dto.Etag;
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.util.ObjectUtil;
+import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.InputStream;
@@ -31,7 +31,7 @@ public interface OssTemplate {
      * 存储桶是否存在
      *
      * @param bucketName 存储桶名称
-     * @return
+     * @return 判断结果
      */
     boolean bucketExists(String bucketName);
 
@@ -179,21 +179,21 @@ public interface OssTemplate {
     /**
      * 推送文件到默认桶下面。默认为项目名的桶
      *
-     * @param originalName
-     * @param inputStream
-     * @return
+     * @param originalName 文件名
+     * @param inputStream  文件内容的输入流
+     * @param catalogue    文件目录
+     * @return 文件上传后的信息
      */
     BaseFile putFile(String originalName, InputStream inputStream, String... catalogue);
 
     /**
      * 推送文本到出桶中
      *
-     * @param originalName
-     * @param content
-     * @param catalogue    目录
-     * @return
+     * @param originalName 文件名
+     * @param content      文件内容
+     * @param catalogue    文件目录
+     * @return 文件上传后的信息
      */
     BaseFile putContent(String originalName, String content, String... catalogue);
-
 
 }

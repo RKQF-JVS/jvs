@@ -26,28 +26,41 @@ public class UserCurrentUtils {
      *
      * @return 用户信息
      */
-    public synchronized static UserInfoDto init() {
+    public synchronized static UserInfoDto<? extends UserDto> init() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Object principal = authentication.getPrincipal();
         if (UN_LOGIN.equals(principal)) {
             throw new BusinessException("用户未登录");
         }
-        return (UserInfoDto) principal;
+        return (UserInfoDto<? extends UserDto>) principal;
     }
 
     /**
      * 获取当前登录用户,由于不是使用的Tomcat，所以每次通过请求头进行获取即可
      *
-     * @return
+     * @return 用户信息
      */
     public static UserDto getCurrentUser() {
         return init().getUserDto();
     }
 
     /**
+     * 获取当前登录用户, 未登录时返回null
+     *
+     * @return 用户信息
+     */
+    public static UserDto getNullableUser() {
+        try {
+            return getCurrentUser();
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    /**
      * 获取用户真名
      *
-     * @return
+     * @return 用户真名
      */
     public static String getRealName() {
         return getCurrentUser().getRealName();
@@ -56,7 +69,7 @@ public class UserCurrentUtils {
     /**
      * 获取登录名
      *
-     * @return
+     * @return 登录名
      */
     public static String getAccountName() {
         return getCurrentUser().getAccountName();
@@ -65,7 +78,7 @@ public class UserCurrentUtils {
     /**
      * 获取角色ID集
      *
-     * @return
+     * @return 角色ID集
      */
     public static List<String> getRole() {
         return init().getRoles();
@@ -101,7 +114,7 @@ public class UserCurrentUtils {
     /**
      * 获取当前用户账号等级
      *
-     * @return
+     * @return 账号等级
      */
     public static Integer getLevel() {
         return getCurrentUser().getLevel();

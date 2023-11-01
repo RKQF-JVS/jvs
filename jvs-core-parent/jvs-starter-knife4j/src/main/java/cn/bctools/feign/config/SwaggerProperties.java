@@ -11,6 +11,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Data
 @ConfigurationProperties("swagger")
 public class SwaggerProperties {
+
+    /**
+     * 是否启用swagger文档(默认关闭)
+     **/
+    private Boolean enable = false;
     /**
      * swagger会解析的包路径
      **/

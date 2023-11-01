@@ -19,7 +19,7 @@ public class TreePo implements Serializable {
     private String id;
     @ApiModelProperty(value = "父菜单ID(只支持一层父级),为-1时为最上级")
     private String parentId;
-    @ApiModelProperty(value = "默认排序值(用户可搜藏后自定义重新排序)")
+    @ApiModelProperty(value = "默认排序值(用户可收藏后自定义重新排序)")
     public Integer sort;
     @ApiModelProperty(value = "菜单名称")
     private String name;

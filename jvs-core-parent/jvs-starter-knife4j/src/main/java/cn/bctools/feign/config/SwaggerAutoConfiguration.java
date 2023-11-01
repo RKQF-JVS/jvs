@@ -33,6 +33,7 @@ public class SwaggerAutoConfiguration {
     @ConditionalOnMissingBean(Docket.class)
     public Docket defaultApi2(SwaggerProperties swaggerProperties) {
         return new Docket(DocumentationType.SWAGGER_2)
+                .enable(Boolean.TRUE.equals(swaggerProperties.getEnable()))
                 .apiInfo(new ApiInfoBuilder().title(swaggerProperties.getTitle()).description(swaggerProperties.getDescription()).build())
                 .securitySchemes(new ArrayList(apiKey()))
                 .securityContexts(new ArrayList(securityContexts()))

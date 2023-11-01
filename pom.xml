@@ -8,7 +8,7 @@
     <groupId>cn.bctools</groupId>
     <artifactId>jvs</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0</version>
+    <version>2.1.0</version>
 
     <organization>
         <name>jvs</name>
@@ -20,12 +20,6 @@
     <url>http://www.bctools.cn/</url>
     <description>jvs - 基于Spring Cloud Alibaba实现的微服务架构</description>
 
-    <modules>
-        <module>jvs-auth-parent</module>
-        <module>jvs-core-parent</module>
-        <module>jvs-demo-examples</module>
-        <module>jvs-gateway-parent</module>
-    </modules>
 
     <licenses>
         <license>
@@ -43,7 +37,6 @@
 
     <developers>
 
-
         <developer>
             <name>glg</name>
             <email>379910194@qq.com</email>
@@ -59,13 +52,27 @@
             <email>1299644816@qq.com</email>
         </developer>
 
-
     </developers>
+
+    <modules>
+        <!--对内开放的API-->
+        <module>jvs-auth-api</module>
+        <!--外部应用授权-->
+        <module>jvs-auth</module>
+        <!--基础包-->
+        <module>jvs-auth-common</module>
+        <!--后端管理接口用于做API实现的-->
+        <module>jvs-auth-mgr</module>
+        <module>jvs-core-parent</module>
+        <!--真实网关-->
+        <module>jvs-gateway</module>
+        <module>jvs-gateway-common</module>
+    </modules>
 
     <properties>
         <java.version>1.8</java.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-        <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
+        <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.plugin.version>3.8.1</maven.plugin.version>
@@ -78,9 +85,9 @@
         <spring-cloud.version>2020.0.3</spring-cloud.version>
         <spring-boot.version>2.4.6</spring-boot.version>
         <mybatis-plus.version>3.4.1</mybatis-plus.version>
-        <mysql-connector.version>8.0.15</mysql-connector.version>
+        <mysql-connector.version>8.0.27</mysql-connector.version>
         <hutool.version>5.7.13</hutool.version>
-        <arthas.version>3.5.4</arthas.version>
+
     </properties>
 
     <dependencies>
@@ -155,11 +162,7 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>com.taobao.arthas</groupId>
-            <artifactId>arthas-spring-boot-starter</artifactId>
-            <version>${arthas.version}</version>
-        </dependency>
+
     </dependencies>
 
 
@@ -254,7 +257,10 @@
         </resources>
         <pluginManagement>
             <plugins>
-
+                <plugin>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.8.2</version>
+                </plugin>
                 <!--spring boot 默认插件-->
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
@@ -277,6 +283,7 @@
                         <target>1.8</target>
                     </configuration>
                 </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
@@ -291,6 +298,7 @@
                     </executions>
                 </plugin>
                 <!-- Javadoc -->
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
@@ -313,30 +321,6 @@
                         </execution>
                     </executions>
                 </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-gpg-plugin</artifactId>
-                    <version>3.0.1</version>
-                    <executions>
-                        <execution>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>sign</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-
-<!--                <plugin>-->
-<!--                    <groupId>org.sonatype.plugins</groupId>-->
-<!--                    <artifactId>nexus-staging-maven-plugin</artifactId>-->
-<!--                    <version>1.6.7</version>-->
-<!--                    <extensions>true</extensions>-->
-<!--                    <configuration>-->
-<!--                        <serverId>sonatype-nexus-staging</serverId>-->
-<!--                        <nexusUrl>https://oss.sonatype.org/</nexusUrl>-->
-<!--                    </configuration>-->
-<!--                </plugin>-->
 
             </plugins>
         </pluginManagement>
@@ -384,45 +368,19 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <!-- GPG -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <version>3.0.1</version>
-                        <executions>
-                            <execution>
-                                <id>sign-artifacts</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-
-<!--                    <plugin>-->
-<!--                        <groupId>org.sonatype.plugins</groupId>-->
-<!--                        <artifactId>nexus-staging-maven-plugin</artifactId>-->
-<!--                        <version>1.6.7</version>-->
-<!--                        <extensions>true</extensions>-->
-<!--                        <configuration>-->
-<!--                            <serverId>sonatype-nexus-staging</serverId>-->
-<!--                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>-->
-<!--                        </configuration>-->
-<!--                    </plugin>-->
-
                 </plugins>
             </build>
 
             <!--默认推送地址-->
             <distributionManagement>
                 <snapshotRepository>
-                    <id>sonatype-nexus-staging</id>
-                    <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+                    <id>rdc-releases</id>
+                    <url>https://packages.aliyun.com/maven/repository/2169733-release-xP5Eny/</url>
                 </snapshotRepository>
+
                 <repository>
-                    <id>sonatype-nexus-staging</id>
-                    <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                    <id>rdc-snapshots</id>
+                    <url>https://packages.aliyun.com/maven/repository/2169733-snapshot-grxE7D/</url>
                 </repository>
             </distributionManagement>
 
@@ -432,12 +390,13 @@
     <!--默认推送地址-->
     <distributionManagement>
         <snapshotRepository>
-            <id>sonatype-nexus-staging</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+            <id>rdc-releases</id>
+            <url>https://packages.aliyun.com/maven/repository/2169733-release-xP5Eny/</url>
         </snapshotRepository>
+
         <repository>
-            <id>sonatype-nexus-staging</id>
-            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>rdc-snapshots</id>
+            <url>https://packages.aliyun.com/maven/repository/2169733-snapshot-grxE7D/</url>
         </repository>
     </distributionManagement>
 

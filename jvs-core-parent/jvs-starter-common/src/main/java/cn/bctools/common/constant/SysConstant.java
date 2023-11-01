@@ -19,7 +19,15 @@ public class SysConstant {
     public static final String TENANTID = "jvs-tenantId";
     public static final String DEFAULT = "default";
     public static final String DATASCOPE = "datascope:applicationname:";
+    /**
+     * 应用名称, 详情见{@link cn.bctools.common.utils.SpringContextUtil#applicationContextName}
+     */
     public static final String APPLICATION_NAME = "_application_name_";
+
+    /**
+     * 默认顶级id(如部门,菜单等)
+     */
+    public static final String ROOT_ID = "-1";
 
     /**
      * 用户邀请的唯一标识

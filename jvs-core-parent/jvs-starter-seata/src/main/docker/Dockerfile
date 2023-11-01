@@ -5,7 +5,7 @@ MAINTAINER guozi <guozinhs@foxmail.com>
 ENV registry_nacos_application="seata-server"
 ENV registry_nacos_serverAddr="127.0.0.1:8848"
 ENV registry_nacos_group="SEATA_GROUP"
-ENV registry_nacos_namespace="jvs"
+ENV registry_nacos_namespace=""
 ENV registry_nacos_cluster="default"
 
 # config.properties

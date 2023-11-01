@@ -1,10 +1,10 @@
 package cn.bctools.common.utils;
 
+import cn.bctools.common.entity.po.TreePo;
+import cn.bctools.common.utils.function.Get;
 import cn.hutool.core.lang.tree.Tree;
 import cn.hutool.core.lang.tree.TreeNodeConfig;
 import cn.hutool.core.lang.tree.TreeUtil;
-import cn.bctools.common.entity.po.TreePo;
-import cn.bctools.common.utils.function.Get;
 import org.apache.commons.lang3.ObjectUtils;
 
 import javax.validation.constraints.NotNull;
@@ -39,7 +39,7 @@ public class TreeUtils {
     }
 
     /**
-     * 单列集合转树形结构
+     * 单列集合转树形结构(单个根节点)
      *
      * @param nodeList     节点集合(需要有父级节点的标识)
      * @param rootKey      根节点标识
@@ -55,22 +55,45 @@ public class TreeUtils {
                                      @NotNull Function<T, K> getKey,
                                      @NotNull Function<T, K> getParentKey,
                                      @NotNull BiConsumer<T, List<T>> setChildList) {
+        List<T> rootList = list2Tree(nodeList, Collections.singletonList(rootKey), getKey, getParentKey, setChildList);
+        if (ObjectUtils.isEmpty(rootList)) {
+            return null;
+        }
+        return rootList.get(0);
+    }
+
+    /**
+     * 单列集合转树形结构(多个根节点)
+     *
+     * @param nodeList     节点集合(需要有父级节点的标识)
+     * @param rootKeyList  根节点标识集合
+     * @param getKey       获取当前节点标识
+     * @param getParentKey 获取父级节点标识
+     * @param setChildList 记录子节点
+     * @param <T>          节点类型
+     * @param <K>          key类型
+     * @return 所有子级的key集合
+     */
+    public static <T, K> List<T> list2Tree(Collection<T> nodeList,
+                                           @NotNull List<K> rootKeyList,
+                                           @NotNull Function<T, K> getKey,
+                                           @NotNull Function<T, K> getParentKey,
+                                           @NotNull BiConsumer<T, List<T>> setChildList) {
         if (ObjectUtils.isEmpty(nodeList)) {
             // 节点为空
-            return null;
+            return Collections.emptyList();
         }
-        // 寻找根节点
-        List<T> rootList = nodeList.stream().filter(node -> rootKey.equals(getKey.apply(node))).collect(Collectors.toList());
-        if (ObjectUtils.isEmpty(rootList) || rootList.size() != 1) {
-            // 找不到根节点, 或根节点不止一个
-            return null;
+        List<T> rootList = nodeList.stream().filter(node -> rootKeyList.contains(getKey.apply(node))).sorted().collect(Collectors.toList());
+        if (ObjectUtils.isEmpty(rootList)) {
+            // 找不到根节点
+            return Collections.emptyList();
         }
-        Map<K, List<T>> map = nodeList.stream().collect(Collectors.groupingBy(getParentKey));
+        Map<K, List<T>> map = nodeList.stream().sorted().collect(Collectors.groupingBy(getParentKey));
         for (T node : nodeList) {
             K key = getKey.apply(node);
             setChildList.accept(node, map.get(key));
         }
-        return rootList.get(0);
+        return rootList;
     }
 
     /**
@@ -124,7 +147,10 @@ public class TreeUtils {
         if (ObjectUtils.isEmpty(nodeList)) {
             return Collections.emptyList();
         }
-        Map<K, List<T>> keyMap = nodeList.stream().filter(k -> ObjectNull.isNotNull(getKey.apply(k))).collect(Collectors.groupingBy(getKey));
+        Map<K, List<T>> keyMap = nodeList.stream()
+                .filter(k -> ObjectNull.isNotNull(getKey.apply(k)))
+                .sorted()
+                .collect(Collectors.groupingBy(getKey));
         // 防止重复遍历key
         Set<K> passByKey = new HashSet<>(nodeList.size());
         List<T> passByNode = new ArrayList<>(nodeList.size());
@@ -135,7 +161,10 @@ public class TreeUtils {
         if (ObjectUtils.isNotEmpty(nodes)) {
             passByNode.addAll(nodes);
         }
-        Map<K, List<T>> parentKeyMap = nodeList.stream().filter(k -> ObjectNull.isNotNull(getParentKey.apply(k))).collect(Collectors.groupingBy(getParentKey));
+        Map<K, List<T>> parentKeyMap = nodeList.stream()
+                .filter(k -> ObjectNull.isNotNull(getParentKey.apply(k)))
+                .sorted()
+                .collect(Collectors.groupingBy(getParentKey));
         while (!keyQueue.isEmpty()) {
             K key = keyQueue.pop();
             List<T> childList = parentKeyMap.get(key);

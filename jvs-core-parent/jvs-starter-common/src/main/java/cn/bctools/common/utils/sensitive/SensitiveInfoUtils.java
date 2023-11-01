@@ -13,12 +13,11 @@ import java.util.function.Function;
  * 此功能在业务层进行操作，而并非在网关层统一操作。所以打印出来的日志也会同样已经处理过脱敏了。
  * 但必须要自定义logback.xml 的  conversionRule 配置如下：
  * <数据脱敏操作,如果项目中不需要脱敏可以不处理，此处是做日志打印时的脱敏操作
- * <conversionRule conversionWord="msg" converterClass="com.basics.log.converter.SensitiveDataConverter"> </conversionRule>
+ * <conversionRule conversionWord="msg" converterClass="cn.bctools.common.utils.sensitive.SensitiveDataConverter"> </conversionRule>
  *
  * @author gj
  */
 public class SensitiveInfoUtils {
-
 
     /**
      * 默认的脱敏方法操作

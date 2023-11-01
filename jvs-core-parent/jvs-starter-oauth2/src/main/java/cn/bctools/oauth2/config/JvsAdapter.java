@@ -1,18 +1,15 @@
 package cn.bctools.oauth2.config;
 
-import cn.hutool.core.util.ArrayUtil;
 import cn.bctools.oauth2.prop.JvsOAuth2Property;
+import cn.hutool.core.util.ArrayUtil;
 import feign.RequestInterceptor;
-import feign.RequestTemplate;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerInterceptor;
-import org.springframework.cloud.openfeign.security.OAuth2FeignRequestInterceptor;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.oauth2.client.OAuth2ClientContext;
-import org.springframework.security.oauth2.client.resource.OAuth2ProtectedResourceDetails;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.DefaultAccessTokenConverter;
@@ -20,10 +17,14 @@ import org.springframework.security.oauth2.provider.token.DefaultUserAuthenticat
 import org.springframework.security.oauth2.provider.token.RemoteTokenServices;
 import org.springframework.web.client.DefaultResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author Administrator
@@ -79,39 +80,32 @@ public class JvsAdapter extends ResourceServerConfigurerAdapter {
         DefaultAccessTokenConverter accessTokenConverter = new DefaultAccessTokenConverter();
         accessTokenConverter.setUserTokenConverter(defaultUserAuthenticationConverter);
         remoteTokenServices.setAccessTokenConverter(accessTokenConverter);
-
         //根据授权认证地址决定，可以是公网认证，或本地认证，如果内部集群环境则不需要此代码
-        {   //公网认证
-            List<ClientHttpRequestInterceptor> interceptors = new ArrayList<>(restTemplate.getInterceptors());
-            interceptors.removeIf(e -> e instanceof LoadBalancerInterceptor);
-            RestTemplate restTemplate = new RestTemplate();
-            restTemplate.setInterceptors(interceptors);
-            restTemplate.setErrorHandler(new DefaultResponseErrorHandler());
-            remoteTokenServices.setRestTemplate(restTemplate);
-        }
-        {
-            //如果内部集群环境
-//            remoteTokenServices.setRestTemplate(restTemplate);
-        }
+        List<ClientHttpRequestInterceptor> interceptors = new ArrayList<>(restTemplate.getInterceptors());
+        interceptors.removeIf(e -> e instanceof LoadBalancerInterceptor);
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.setInterceptors(interceptors);
+        restTemplate.setErrorHandler(new DefaultResponseErrorHandler());
+        remoteTokenServices.setRestTemplate(restTemplate);
         resources.tokenServices(remoteTokenServices);
     }
 
     /**
-     * 微服务内部请求时将token放到请求头中
+     * Feign请求增强, 用请求头传递用户Token
      * <p>
      * 增强失败时不作处理(无Token时)
      */
     @Bean
-    public RequestInterceptor oauth2FeignRequestInterceptor(OAuth2ClientContext oAuth2ClientContext,
-                                                            OAuth2ProtectedResourceDetails resource) {
-        return new OAuth2FeignRequestInterceptor(oAuth2ClientContext, resource) {
-            @Override
-            public void apply(RequestTemplate template) {
-                try {
-                    super.apply(template);
-                } catch (Exception e) {
-                    log.trace("用户权限增强失败: {}", e.getMessage());
+    public RequestInterceptor oauth2FeignRequestInterceptor() {
+        return template -> {
+            try {
+                ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+                if (Objects.nonNull(requestAttributes)) {
+                    HttpServletRequest request = requestAttributes.getRequest();
+                    template.header(HttpHeaders.AUTHORIZATION, request.getHeader(HttpHeaders.AUTHORIZATION));
                 }
+            } catch (Exception e) {
+                log.trace("用户权限增强失败: {}", e.getMessage());
             }
         };
     }

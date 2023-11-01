@@ -1,8 +1,5 @@
 package cn.bctools.oss.template;
 
-import cn.hutool.core.util.ObjectUtil;
-import cn.hutool.core.util.StrUtil;
-import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import cn.bctools.common.exception.BusinessException;
 import cn.bctools.common.utils.SpringContextUtil;
 import cn.bctools.oss.dto.BaseFile;
@@ -10,6 +7,9 @@ import cn.bctools.oss.dto.Etag;
 import cn.bctools.oss.props.OssProperties;
 import cn.bctools.oss.service.FileDataInterface;
 import cn.bctools.oss.utils.FilePathUtils;
+import cn.hutool.core.util.ObjectUtil;
+import cn.hutool.core.util.StrUtil;
+import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import io.minio.*;
 import io.minio.http.Method;
 import io.minio.messages.Item;
@@ -22,7 +22,6 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 
 /**
  * minio 交互类
@@ -267,7 +266,7 @@ public class MinioTemplate extends MinioClient implements OssTemplate {
 
     @Override
     public BaseFile putFile(String originalName, InputStream inputStream, String... catalogue) {
-        String module = Arrays.stream(catalogue).collect(Collectors.joining(StringPool.SLASH));
+        String module = String.join(StringPool.SLASH, catalogue);
         return putFile(SpringContextUtil.getApplicationContextName(), module, originalName, inputStream);
 
     }
@@ -275,7 +274,7 @@ public class MinioTemplate extends MinioClient implements OssTemplate {
     @Override
     public BaseFile putContent(String originalName, String content, String... catalogue) {
         byte[] serialize = ObjectUtil.serialize(content);
-        String module = Arrays.stream(catalogue).collect(Collectors.joining(StringPool.SLASH));
+        String module = String.join(StringPool.SLASH, catalogue);
         return putFile(SpringContextUtil.getApplicationContextName(), module, originalName, new ByteArrayInputStream(serialize));
     }
 

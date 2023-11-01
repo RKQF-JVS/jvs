@@ -125,7 +125,7 @@ public class SpringContextUtil implements ApplicationContextAware {
     public Void MetaData(NacosDiscoveryProperties nacosDiscoveryProperties, Environment environment) {
         Map<String, String> metadata = nacosDiscoveryProperties.getMetadata();
         random = IdGenerator.getIdStr();
-        version = metadata.getOrDefault(SysConstant.VERSION, "default");
+        version = metadata.getOrDefault(SysConstant.VERSION, SysConstant.DEFAULT);
         metadata.put("random", random);
         metadata.put("name", environment.getProperty("swagger.title"));
         try {

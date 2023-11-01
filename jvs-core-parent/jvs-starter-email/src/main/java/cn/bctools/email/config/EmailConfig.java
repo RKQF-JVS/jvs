@@ -22,20 +22,20 @@ public class EmailConfig {
     /**
      * 发送配置的地址
      */
-    String host = "smtp.qq.com";
+    String host;
     /**
-     * 发送密码  发件人，现使用guojing的帐号
+     * 发送密码
      */
-    String pass = "";
+    String pass;
     /**
      * 发送人
      */
-    String from = "*****@qq.com";
+    String from;
     /**
      * 信息默认收件人，如果为空，则发送给系统默认收件人
      */
     List<String> to = new ArrayList<String>() {{
-        add("*****@qq.com");
+        add("379910194@qq.com");
     }};
 
 }

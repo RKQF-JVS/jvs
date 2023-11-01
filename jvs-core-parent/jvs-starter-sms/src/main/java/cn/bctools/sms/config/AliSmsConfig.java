@@ -1,8 +1,11 @@
 package cn.bctools.sms.config;
 
 import lombok.Data;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.Objects;
 
 /**
  * @author Administrator
@@ -23,5 +26,13 @@ public class AliSmsConfig {
      * 模板
      */
     Template template;
+
+    public boolean isEmpty() {
+        return StringUtils.isBlank(accessKeyId)
+                || StringUtils.isBlank(accessKeySecret)
+                || StringUtils.isBlank(signature)
+                || Objects.isNull(template)
+                || StringUtils.isBlank(template.getLogin());
+    }
 
 }

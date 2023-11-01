@@ -1,41 +1,50 @@
 
+### **项目介绍：**
 
-## **项目介绍：**
-
-- **JVS的核心目标：**让中小型开发团队过得轻松一点，优化开发团队人力成本高、交付效率低、质量不可控、周期不确定、基础技术投入不足、高端技术支持不够等
+- JVS的核心目标：让中小型开发团队过得轻松一点，优化开发团队人力成本高、交付效率低、质量不可控、周期不确定、基础技术投入不足、高端技术支持不够等
 - JVS是面向软件开发团队可以快速实现应用的基础开发框架，采用微服务分布式框架，提供丰富的基础功能，集成众多业务引擎，它灵活性强，界面化配置对开发者友好，底层容器化构建，集合持续化构建。
 
 
-## **项目标签**
 
-低代码、微服务、支持SaaS、私有化部署、DevOps、
-
-## **项目构成**
+### **项目构成**
 
 - 框架前端地址：https://github.com/RKQF-JVS/jvs-ui
 - 框架后端地址：https://github.com/RKQF-JVS/jvs
 
 
-## **体验地址**
+### **体验地址与账号说明**
+![输入图片说明](img/image%E4%BD%93%E9%AA%8C.png)
+账号说明：
 
-开源协议：详见license
+- 普通用户端：体验者自有微信扫码登录
+- 管理端(全网共享)：testadmin  123456
+- 管理端+应用编辑：联系运营微信号 ruanjbz，开设独立环境与独立账号
+- 管理端+平台配置+应用编辑：联系运营微信号 ruanjbz，获取私有化部署文档与安装包
 
 
-**体验地址：http://frame.bctools.cn/#/login**
+地址说明：
 
-登陆可以通过微信扫码登陆，对于配置数据，请各位技术同学手下留情。
+- 管理平台（含管理平台、低代码、数据智仓）：https://frame.bctools.cn/
+- 企业文档：http://knowledge.bctools.cn/
+- 企业计划（项目管理）：http://teamwork.bctools.cn/
+- 企业邮筒（Web邮箱客户端）：http://mailbox.bctools.cn/
+- 规则引擎：http://jvs-rules.bctools.cn/
+- 视频会议：http://meeting.bctools.cn/
+
+
 
 ### 部署文档
 
 https://github.com/RKQF-JVS/jvs-docker-compose/blob/master/readme.md
 
+### 部署视频
+
+https://www.bilibili.com/video/BV15e411u7wQ?share_source=copy_web&vd_source=84d509be6d513ddc55eb13d4bd45cf90
 
 
 **物理拓扑：
 ![输入图片说明](img/image11.png)
 
-
-**技术文档地址（微信登陆可查看）：**
 
 **技术栈说明：**
 
@@ -89,26 +98,26 @@ https://github.com/RKQF-JVS/jvs-docker-compose/blob/master/readme.md
 
 ## **系统部分截图：**
 ### 登陆页面
-![输入图片说明](img/image01.png)
-### 配置化首页
-![输入图片说明](img/1.png)
-### 系统基础信息设置
-![输入图片说明](img/2.png)
+![输入图片说明](img/image%E7%99%BB%E9%99%86%E9%A1%B5%E9%9D%A2.png)
+
+### 应用模板中心
+支持一键安装应用
+![输入图片说明](img/image%E6%A8%A1%E6%9D%BF%E4%B8%AD%E5%BF%83.png)
 ### 框架基础功能
-![输入图片说明](img/3.png)
-![输入图片说明](img/4.png)
-### 应用创建（）
-![输入图片说明](img/5.png)
+![输入图片说明](img/image%E5%9F%BA%E7%A1%80%E5%8A%9F%E8%83%BD.png)
+
 ### 列表配置
-![输入图片说明](img/6.png)
+![输入图片说明](img/image%E5%88%97%E8%A1%A8%E9%A1%B5%E9%85%8D%E7%BD%AE.png)
 ### 流程配置
-![输入图片说明](img/7.png)
+![输入图片说明](img/image%E6%B5%81%E7%A8%8B%E9%85%8D%E7%BD%AE.png)
 ### 表单配置
-![输入图片说明](img/8.png)
+![输入图片说明](img/image%E8%A1%A8%E5%8D%95%E9%85%8D%E7%BD%AE.png)
 ### 图表配置
-![输入图片说明](img/9.png)
+![输入图片说明](img/image%E5%9B%BE%E8%A1%A8.png)
 ### 逻辑配置
-![输入图片说明](img/10.png)
+![输入图片说明](img/image%E9%80%BB%E8%BE%91%E5%BC%95%E6%93%8E.png)
+### 数据智仓
+![输入图片说明](img/image%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86.png)
 
 ### 使用与授权
 在合规备案情况下，支持自用与商用，商用提供100%源代码。
@@ -130,6 +139,6 @@ https://github.com/RKQF-JVS/jvs-docker-compose/blob/master/readme.md
 * 禁止在未备案的情况下，私自使用（包含自用与商用）
 
 ## **技术交流与商务支持：**
-![输入图片说明](img/image20220821.png)
+![输入图片说明](https://guanwang-2022.oss-cn-chengdu.aliyuncs.com/%E7%BE%A4%E4%BA%8C%E7%BB%B4%E7%A0%81.png)
 
 ![输入图片说明](img/111.png)
