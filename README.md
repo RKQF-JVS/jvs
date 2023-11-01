@@ -1,8 +1,4 @@
 
-## 产品架构
-JVS是企业整体数字化快速转型的解决方案，基础框架是为整个技术体系提供统一的基础数字底座，支持多种能力（低代码、数据分析）、同时支持多种企业应用（纯原生应用、轻应用）
-![image](https://github.com/RKQF-JVS/jvs/assets/94048608/67d897e1-f285-46be-8317-8ecf2092b541)
-
 
 ## **项目介绍：**
 
@@ -20,30 +16,17 @@ JVS是企业整体数字化快速转型的解决方案，基础框架是为整�
 - 框架后端地址：https://github.com/RKQF-JVS/jvs
 
 
-## 体验地址与账号说明
-![image](https://user-images.githubusercontent.com/94048608/212477221-923dc994-f450-42c6-9a80-4898df7e3516.png)
+## **体验地址**
 
-### 账号说明：
-
-- 普通用户端：体验者自有微信扫码登录
-- 管理端(全网共享)：testadmin 123456
-- 管理端+应用编辑：联系运营微信号 ruanjbz，开设独立环境与独立账号
-- 管理端+平台配置+应用编辑：联系运营微信号 ruanjbz，获取私有化部署文档与安装包
-### 地址说明：
-
-- 管理平台（含管理平台、低代码、数据智仓）：https://frame.bctools.cn/
-- 企业文档：http://knowledge.bctools.cn/
-- 企业计划（项目管理）：http://teamwork.bctools.cn/
-- 企业邮筒（Web邮箱客户端）：http://mailbox.bctools.cn/
-- 规则引擎：http://jvs-rules.bctools.cn/
-- 逻辑引擎：http://logic.bctools.cn/
-- 视频会议：http://meeting.bctools.cn/
+开源协议：详见license
 
 
-**技术文档地址（微信登陆可查看）：**
-整体项目文档群 [点击跳转](http://knowledge.bctools.cn/#/view?id=dd37733c43c064ac1c4f1c2155e04ce6)
+**体验地址：http://frame.bctools.cn/#/login**
+
+登陆可以通过微信扫码登陆，对于配置数据，请各位技术同学手下留情。
 
 ### 部署文档
+
 https://github.com/RKQF-JVS/jvs-docker-compose/blob/master/readme.md
 
 
@@ -147,11 +130,6 @@ https://github.com/RKQF-JVS/jvs-docker-compose/blob/master/readme.md
 * 禁止在未备案的情况下，私自使用（包含自用与商用）
 
 ## **技术交流与商务支持：**
-![群二维码](https://github.com/RKQF-JVS/jvs/assets/94048608/e9a10412-aac4-4920-b315-379b89276e84)
+![输入图片说明](img/image20220821.png)
 
-
-
-
-
-
-
+![输入图片说明](img/111.png)
