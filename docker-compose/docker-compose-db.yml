@@ -1,0 +1,124 @@
+version: '3'
+services:
+  jvs-mysql:
+    image: mysql:5.7
+    container_name: jvs-mysql
+    volumes:
+      - ./data/mysql/:/var/lib/mysql
+      - ./data/mysqlcnf/:/etc/mysql/conf.d/
+      - ./mysql:/docker-entrypoint-initdb.d # 初始化数据
+    # 挂载配置文件目录
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_ROOT_HOST=%
+      - TZ=Asia/Shanghai
+    ports:
+      - "3306:3306"
+    restart: always
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci  --lower_case_table_names=1 --max_connections=4096 --sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+  jvs-nacos:
+    image: nacos/nacos-server:2.0.0
+    container_name: jvs-nacos
+    environment:
+      - MODE=standalone
+      - MYSQL_SERVICE_DB_NAME=nacos
+      - MYSQL_SERVICE_HOST=jvs-mysql
+      - MYSQL_SERVICE_PASSWORD=root
+      - MYSQL_SERVICE_PORT=3306
+      - MYSQL_SERVICE_USER=root
+      - NACOS_APPLICATION_PORT=8848
+      - PREFER_HOST_MODE=hostname
+      - SPRING_DATASOURCE_PLATFORM=mysql
+    restart: always
+    ports:
+      - "8848:8848"
+    depends_on:
+      - jvs-mysql
+      - elasticsearch
+      - jvs-redis
+  #文件服务器需要
+  jvs-minio:
+    image: minio/minio:RELEASE.2022-06-11T19-55-32Z.fips
+    container_name: jvs-minio
+    restart: always
+    environment:
+      - MINIO_ROOT_USER=miniominio
+      - MINIO_ROOT_PASSWORD=miniominio
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./data/minio/:/data
+    ports:
+      - 9000:9000
+      - 9001:9001
+    command: server /data --console-address ':9001'
+  createbuckets:
+    image: minio/mc
+    depends_on:
+      - jvs-minio
+    entrypoint: >
+      /bin/sh -c "
+      /usr/bin/mc alias set myminio http://jvs-minio:9000 miniominio miniominio;
+      /usr/bin/mc mb myminio/jvs-public;
+      /usr/bin/mc policy set public myminio/jvs-public;
+      /usr/bin/mc mb myminio/jvs-screen;
+      /usr/bin/mc policy set public myminio/jvs-screen;
+      exit 0;
+      "
+  #缓存
+  jvs-redis:
+    container_name: jvs-redis
+    image: redis:6.0
+    restart: always
+    privileged: true
+   # command: redis-server --requirepass "redis"
+    volumes:
+      - ./data/redis/:/data
+    ports:
+      - 6379:6379
+  #文件存储
+  elasticsearch:
+    container_name: elasticsearch
+    image: elasticsearch:7.4.2
+    restart: always
+    environment:
+      - discovery.type=single-node
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./data/elasticsearch/data:/usr/share/elasticsearch/data/
+    ports:
+      - 9200:9200
+      - 9300:9300
+  #文件存储
+  rabbitmq:
+    container_name: rabbitmq
+    image: 0glg0/jvs-rabbitmq:management
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+      - RABBITMQ_DEFAULT_USER=jvs
+      - RABBITMQ_DEFAULT_PASS=jvs
+      - RABBITMQ_DEFAULT_VHOST=/jvs
+    volumes:
+      - ./data/rabbitmq/:/var/lib/rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+  jvs-mongo:
+    container_name: jvs-mongo
+    image: mongo
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./data/mongo/:/data/db
+    ports:
+      - 27017:27017
+#桥接网络
+networks:
+  proxy:
+    ipam:
+      config:
+        - subnet: 10.0.0.1/24
+# es存储卷
+volumes:
+  elasticsearch:

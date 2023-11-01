@@ -1,0 +1,44 @@
+server:
+  port: ${random.int[50001,50099]}
+version: @project.version@
+spring:
+  application:
+    name: @project.artifactId@
+  main.allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: jvs-nacos:8848
+        namespace: jvs
+        group: ${spring.cloud.nacos.discovery.namespace}
+      config:
+        group: ${spring.cloud.nacos.discovery.group}
+        file-extension: yml
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        shared-configs:
+          - dataId: application.${spring.cloud.nacos.config.file-extension}
+            refresh: true
+          - dataId: ${parent.artifactId}.${spring.cloud.nacos.config.file-extension}
+            refresh: true
+    inetutils:
+      #选择使用此网段进行处理
+      preferred-networks: 10.*
+swagger:
+  title: "消息通知"
+  description: "推送消息到指定平台"
+
+security:
+  oauth2:
+    client:
+      # 默认使用项目名做为client
+      client-id: frame
+      client-secret: frame
+      access-token-uri: ${oauthUrl}/oauth/token
+      user-authorization-uri: ${oauthUrl}/oauth/authorize
+      scope: server
+    resource:
+      token-info-uri: ${oauthUrl}/oauth/check_token
+      user-info-uri: ${oauthUrl}/user
+    authorization:
+      check-token-access: ${oauthUrl}/oauth/check_token

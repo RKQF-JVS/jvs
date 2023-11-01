@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies-parent</artifactId>
+        <version>3.0.3</version>
+        <relativePath></relativePath>
+    </parent>
+
+    <groupId>cn.bctools</groupId>
+    <artifactId>jvs-common-pom</artifactId>
+    <version>2.1.5</version>
+    <packaging>pom</packaging>
+
+
+    <dependencyManagement>
+
+        <dependencies>
+            <!--逻辑引用自定义方法块-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-rule-function</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--数据库操作-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-database</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--多数据源-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-dynamic</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--基础包-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--web-starter启动初始化容器包-注册中心基础服务-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--webFeign接口请求二次扩展拦截-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-feign</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--定时任务-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-job</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--版本路由-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-gray</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--日志-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-log</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--缓存Redis-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-redis</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--文件服务-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-oss</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--短信-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-sms</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--邮箱-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-email</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--认证授权-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-oauth2</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--分布式事务-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-seata</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--swagger-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-knife4j</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--钉钉接入-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-dingding</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--sentinel-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-sentinel</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--监控服务-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-prometheus</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--Mq-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-rabbit</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!--wps在线文档编辑-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-wps</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--word生成  转换-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-word</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--mongodb 数据库操作工具类-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-mongodb</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--公共函数-->
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-starter-function</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.bctools</groupId>
+                <artifactId>jvs-auth-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+        </dependencies>
+
+    </dependencyManagement>
+
+
+    <!--默认推送地址-->
+    <distributionManagement>
+        <repository>
+            <!--必须与 settings.xml 的 id 一致-->
+            <id>j8s-j8s-jvs</id>
+            <name>jvs</name>
+            <url>https://j8s-maven.pkg.coding.net/repository/j8s/jvs/</url>
+        </repository>
+    </distributionManagement>
+
+
+</project>

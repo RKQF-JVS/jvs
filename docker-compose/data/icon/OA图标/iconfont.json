@@ -1,0 +1,443 @@
+{
+  "id": "2940994",
+  "name": "OA图标",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "8713048",
+      "name": "案前调解",
+      "font_class": "anqiantiaojie",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "8713049",
+      "name": "创业申请查询",
+      "font_class": "chuangyeshenqingchaxun",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "8713050",
+      "name": "案件进度查询 copy",
+      "font_class": "anjianjinduchaxuncopy",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "8713051",
+      "name": "登记进度查询",
+      "font_class": "dengjijinduchaxun",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "8713052",
+      "name": "个人基本信息 查询修改",
+      "font_class": "gerenjibenxinxichaxunxiugai",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "8713053",
+      "name": "个人参保信息 查询",
+      "font_class": "gerencanbaoxinxichaxun",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "8713054",
+      "name": "工伤待遇资格认证",
+      "font_class": "gongshangdaiyuzigerenzheng",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "8713055",
+      "name": "定点医药机构 信息查询",
+      "font_class": "dingdianyiyaojigouxinxichaxun",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "8713056",
+      "name": "个人权益单打印",
+      "font_class": "gerenquanyidandayin",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "8713057",
+      "name": "工伤补助金申报",
+      "font_class": "gongshangbuzhujinshenbao",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "8713058",
+      "name": "个人缴费明细",
+      "font_class": "gerenjiaofeimingxi",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "8713059",
+      "name": "就业困难申请",
+      "font_class": "jiuyekunnanshenqing",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "8713060",
+      "name": "个人业务受理",
+      "font_class": "gerenyewushouli",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "8713061",
+      "name": "就业创业证申请",
+      "font_class": "jiuyechuangyezhengshenqing",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "8713062",
+      "name": "个人举报登记",
+      "font_class": "gerenjubaodengji",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "8713063",
+      "name": "慢病定点",
+      "font_class": "manbingdingdian",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "8713064",
+      "name": "个人停保",
+      "font_class": "gerentingbao",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "8713065",
+      "name": "开庭庭期公告",
+      "font_class": "kaitingtingqigonggao",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "8713066",
+      "name": "个人投诉登记",
+      "font_class": "gerentousudengji",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "8713067",
+      "name": "生育医疗费结算 记录查询",
+      "font_class": "shengyuyiliaofeijiesuanjiluchaxun",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "8713068",
+      "name": "劳动能力鉴定",
+      "font_class": "laodongnenglijianding",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "8713069",
+      "name": "个人参保证明 打印",
+      "font_class": "gerencanbaozhengmingdayin",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "8713070",
+      "name": "养老待遇发放信息",
+      "font_class": "yanglaodaiyufafangxinxi",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "8713071",
+      "name": "居保个人新增",
+      "font_class": "jubaogerenxinzeng",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "8713072",
+      "name": "失业登记申请",
+      "font_class": "shiyedengjishenqing",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "8713073",
+      "name": "生育待遇信息 查询",
+      "font_class": "shengyudaiyuxinxichaxun",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "8713074",
+      "name": "失业登记申请 查询",
+      "font_class": "shiyedengjishenqingchaxun",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "8713075",
+      "name": "失业培训项目 收集",
+      "font_class": "shiyepeixunxiangmushouji",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "8713076",
+      "name": "养老金核定打印",
+      "font_class": "yanglaojinhedingdayin",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "8713077",
+      "name": "服务设施信息 查询",
+      "font_class": "fuwusheshixinxichaxun",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "8713078",
+      "name": "社保缴费",
+      "font_class": "shebaojiaofei",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "8713079",
+      "name": "就业困难申请 查询",
+      "font_class": "jiuyekunnanshenqingchaxun",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "8713080",
+      "name": "养老待遇申领",
+      "font_class": "yanglaodaiyushenling",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "8713081",
+      "name": "医保个账授权 查询",
+      "font_class": "yibaogezhangshouquanchaxun",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "8713082",
+      "name": "医疗补助金申报",
+      "font_class": "yiliaobuzhujinshenbao",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "8713083",
+      "name": "数据采集",
+      "font_class": "shujucaiji",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "8713084",
+      "name": "养老待遇资格 认证",
+      "font_class": "yanglaodaiyuzigerenzheng",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "8713085",
+      "name": "网上申请转出",
+      "font_class": "wangshangshenqingzhuanchu",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "8713086",
+      "name": "在职养老账户 信息查询",
+      "font_class": "zaizhiyanglaozhanghuxinxichaxun",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "8713087",
+      "name": "养老转入查询",
+      "font_class": "yanglaozhuanruchaxun",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "8713088",
+      "name": "工伤待遇信息查询",
+      "font_class": "gongshangdaiyuxinxichaxun",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "8713089",
+      "name": "自谋职业申请 查询",
+      "font_class": "zimouzhiyeshenqingchaxun",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "8713090",
+      "name": "诊疗项目信息 查询",
+      "font_class": "zhenliaoxiangmuxinxichaxun",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "8713091",
+      "name": "职业技能补贴申报",
+      "font_class": "zhiyejinengbutieshenbao",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "8713092",
+      "name": "医保个账授权",
+      "font_class": "yibaogezhangshouquan",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "8713093",
+      "name": "信息查询",
+      "font_class": "xinxichaxun",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "8713094",
+      "name": "医疗转入查询",
+      "font_class": "yiliaozhuanruchaxun",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "8713095",
+      "name": "失业待遇信息 查询",
+      "font_class": "shiyedaiyuxinxichaxun",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "8713096",
+      "name": "医疗消费信息查询",
+      "font_class": "yiliaoxiaofeixinxichaxun",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "8713097",
+      "name": "药品目录信息 查询",
+      "font_class": "yaopinmuluxinxichaxun",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "8713098",
+      "name": "异地就医登记",
+      "font_class": "yidijiuyidengji",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "8713099",
+      "name": "预约查档",
+      "font_class": "yuyuechadang",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "8713100",
+      "name": "自谋职业申请",
+      "font_class": "zimouzhiyeshenqing",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "8713101",
+      "name": "失业待遇申报",
+      "font_class": "shiyedaiyushenbao",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "8713102",
+      "name": "居民个人续保",
+      "font_class": "jumingerenxubao",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    },
+    {
+      "icon_id": "8713103",
+      "name": "医保余额",
+      "font_class": "yibaoyue",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "8713104",
+      "name": "离退休人员信息 修改查询",
+      "font_class": "lituixiurenyuanxinxixiugaichaxun",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "8713105",
+      "name": "医疗养老凭证",
+      "font_class": "yiliaoyanglaopingzheng",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "8713106",
+      "name": "社保卡挂失",
+      "font_class": "shebaoqiaguashi",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "8713107",
+      "name": "异地就医备案 记录查询",
+      "font_class": "yidijiuyibeianjiluchaxun",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "8713108",
+      "name": "制卡进度查询",
+      "font_class": "zhiqiajinduchaxun",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "8713109",
+      "name": "异地就医备案取消",
+      "font_class": "yidijiuyibeianquxiao",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    }
+  ]
+}

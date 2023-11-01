@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>jvs-message-push</artifactId>
+        <groupId>cn.bctools</groupId>
+        <version>2.1.5</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>message-push-common</artifactId>
+    <version>2.1.5</version>
+    <properties>
+        <ali.version>2.0.9</ali.version>
+    </properties>
+    <dependencies>
+        <!--文件上传服务-->
+        <dependency>
+            <groupId>cn.bctools</groupId>
+            <artifactId>jvs-starter-oss</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.bctools</groupId>
+            <artifactId>jvs-starter-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.bctools</groupId>
+            <artifactId>jvs-starter-rabbit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.bctools</groupId>
+            <artifactId>jvs-starter-knife4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.bctools</groupId>
+            <artifactId>jvs-starter-oauth2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
+        </dependency>
+        <!-- 企业微信 -->
+        <dependency>
+            <groupId>com.github.binarywang</groupId>
+            <artifactId>weixin-java-cp</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+        <!-- 微信公众号 -->
+        <dependency>
+            <groupId>com.github.binarywang</groupId>
+            <artifactId>weixin-java-mp</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+        <!-- 钉钉 -->
+        <dependency>
+            <groupId>com.qimencloud.api</groupId>
+            <artifactId>dingding</artifactId>
+            <version>ding-open-mc-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/lib/dingding.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>cn.bctools</groupId>
+            <artifactId>message-push-dto</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- 阿里 短信-->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>dysmsapi20170525</artifactId>
+            <version>${ali.version}</version>
+        </dependency>
+        <!--websocket 站内消息-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+    </dependencies>
+    <build>
+        <resources>
+            <resource>
+                <directory>${project.basedir}/src/lib</directory>
+                <includes>
+                    <include>dingding.jar</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+</project>

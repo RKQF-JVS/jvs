@@ -1,0 +1,26 @@
+server:
+  port: 10000
+version: @project.version@
+spring:
+  application:
+    name: @project.artifactId@
+  main.allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: jvs-nacos:8848
+        namespace: jvs
+        group: ${spring.cloud.nacos.discovery.namespace}
+      config:
+        group: ${spring.cloud.nacos.discovery.group}
+        file-extension: yml
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        shared-configs:
+          - dataId: application.${spring.cloud.nacos.config.file-extension}
+            refresh: true
+          - dataId: ${parent.artifactId}.${spring.cloud.nacos.config.file-extension}
+            refresh: true
+    inetutils:
+      #选择使用此网段进行处理
+      preferred-networks: 10.*

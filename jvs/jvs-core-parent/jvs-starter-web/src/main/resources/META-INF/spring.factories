@@ -1,0 +1,9 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+cn.bctools.web.config.ContextHolderFilter,\
+cn.bctools.web.config.JacksonConfiguration,\
+cn.bctools.web.config.JvsWebMvcConfigurer,\
+cn.bctools.web.config.UnifyExceptionHandler,\
+cn.bctools.web.config.session.NoSessionBeanPostProcessor,\
+cn.bctools.web.excel.ArrayListConvert,\
+cn.bctools.web.excel.ListConvert,\
+cn.bctools.web.excel.LocalDateTimeConvert
