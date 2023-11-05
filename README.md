@@ -161,7 +161,8 @@ https://www.bilibili.com/video/BV15e411u7wQ?share_source=copy_web&vd_source=84d5
 
 ## **技术交流与商务支持：**
 
-![输入图片说明](img/1030.png)
+![群二维码](https://github.com/RKQF-JVS/jvs/assets/94048608/d268b0b8-34c7-4f77-8a00-d2474bddede3)
+
 
 如因人数限制无法加群时，可加运营同学拉入技术交流群
 
