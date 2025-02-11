@@ -1,4 +1,4 @@
-
+![微信图片_20250211100806](https://github.com/user-attachments/assets/134c4f5f-b112-47e2-8685-964461b5ed53)
 ### **项目介绍：**
 
 - JVS是什么？
@@ -46,6 +46,7 @@
 - 规则引擎：http://rules.bctools.cn/
 - 逻辑引擎：http://logic.bctools.cn/
 - 视频会议：http://meeting.bctools.cn/
+- APS（智能排产）：https://aps.bctools.cn/
 
 
 
@@ -161,7 +162,8 @@ https://www.bilibili.com/video/BV15e411u7wQ?share_source=copy_web&vd_source=84d5
 
 ## **技术交流与商务支持：**
 
-![微信截图_20241009183836](https://github.com/user-attachments/assets/735724e7-281f-4ba5-8d41-6334ab2787fd)
+![微信图片_20250211100806](https://github.com/user-attachments/assets/df9554b9-5c9d-4054-b5fc-42a4e4a46965)
+
 
 
 
