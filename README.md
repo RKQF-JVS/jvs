@@ -1,4 +1,4 @@
-![微信图片_20250211100806](https://github.com/user-attachments/assets/134c4f5f-b112-47e2-8685-964461b5ed53)
+
 ### **项目介绍：**
 
 - JVS是什么？
