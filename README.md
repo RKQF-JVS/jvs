@@ -162,7 +162,8 @@ https://www.bilibili.com/video/BV15e411u7wQ?share_source=copy_web&vd_source=84d5
 
 ## **技术交流与商务支持：**
 
-![微信图片_20250220101551](https://github.com/user-attachments/assets/ae9b2d7d-3285-4a99-af03-74670036ecda)
+![小微信图片_20250227142830](https://github.com/user-attachments/assets/0951b9d3-0bd7-4868-a82c-1d642369a342)
+
 
 
 
@@ -172,4 +173,5 @@ https://www.bilibili.com/video/BV15e411u7wQ?share_source=copy_web&vd_source=84d5
 
 如因人数限制无法加群时，可加运营同学拉入技术交流群
 
-![输入图片说明](https://foruda.gitee.com/images/1693376631879434922/54ec140e_10006021.png "屏幕截图")
+![谭京](https://github.com/user-attachments/assets/533d162b-645d-4e6f-89da-6554fbe4b7df)
+
