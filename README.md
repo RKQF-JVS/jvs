@@ -162,7 +162,7 @@ https://www.bilibili.com/video/BV15e411u7wQ?share_source=copy_web&vd_source=84d5
 
 ## **技术交流与商务支持：**
 
-![微信图片_20250421154028](https://github.com/user-attachments/assets/d16c996c-e026-441b-84be-b0cf00334692)
+![微信图片_20250428092223](https://github.com/user-attachments/assets/1bf13615-9ea9-4a03-94cc-0deb356621cb)
 
 
 
