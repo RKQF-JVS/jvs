@@ -161,7 +161,7 @@ https://www.bilibili.com/video/BV15e411u7wQ?share_source=copy_web&vd_source=84d5
 * 禁止在未备案的情况下，私自使用（包含自用与商用）
 
 ## **技术交流与商务支持：**
-<img width="235" height="359" alt="微信图片_20250924104037_78_235" src="https://github.com/user-attachments/assets/f13d1ef9-445e-468e-89de-b4406579f01e" />
+<img width="208" height="345" alt="微信图片_20251022100945_115_235" src="https://github.com/user-attachments/assets/957ed946-d614-42cf-858a-4b2420ccfa1b" />
 
 
 
